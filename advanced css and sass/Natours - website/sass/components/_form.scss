@@ -1,0 +1,103 @@
+.form {
+  &__group:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  &__input {
+    font-size: 1.6rem;
+    font-family: inherit;
+    color: inherit;
+    padding: 1.5rem 2rem;
+    background-color: rgba($color-white, $alpha: 0.5);
+    border: none;
+    display: block;
+    width: 90%;
+
+    @include radius(2px);
+    @include transition(all, 0.2s, ease, 0s);
+
+    @include respond(phone) {
+      width: 100%;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+      border-bottom: 2px solid $color-primary;
+    }
+
+    &:focus:invalid {
+      border-bottom: 2px solid $color-secondary-dark;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $color-grey-dark2;
+    }
+  }
+
+  &__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: 0.5rem;
+    display: block;
+  }
+
+  // sibling selector '+' for the next first sibling or using '~' for other siblings
+  &__input:placeholder-shown + &__label {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &__radio-group {
+    width: 49.7%;
+    display: inline-block;
+
+    @include respond(phone) {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__radio-label {
+    font-size: $default-font-size;
+    cursor: pointer;
+    position: relative;
+    padding-left: 5rem;
+  }
+
+  &__radio-input {
+    display: none;
+  }
+
+  &__radio-button {
+    display: inline-block;
+    height: 3rem;
+    width: 3rem;
+    border: 5px solid $color-primary;
+    position: absolute;
+    left: 0;
+    top: -0.4rem;
+
+    @include radius(4rem);
+
+    &::after {
+      content: "";
+      display: block;
+      height: 1.5rem;
+      width: 1.5rem;
+      background-color: $color-primary;
+      opacity: 0;
+
+      @include abs-center;
+      @include radius(50%);
+      @include transition(all, 0.2s, ease, 0s);
+    }
+  }
+
+  &__radio-input:checked ~ &__radio-label &__radio-button::after {
+    opacity: 1;
+    //fix for safari
+    -khtml-opacity: 1;
+  }
+}

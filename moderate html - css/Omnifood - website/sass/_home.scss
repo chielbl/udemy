@@ -1,0 +1,32 @@
+.section {
+  &--hero,
+  &--how,
+  &--meal,
+  &--pricing,
+  &--features,
+  &--cta {
+    padding: $gap-hg 0;
+  }
+  &--hero {
+    background-color: $color-bg;
+  }
+
+  &--featured {
+    padding: $gap-lg 0 $gap-md 0;
+  }
+
+  // &--how {
+  // }
+
+  &--testimonial {
+    background-color: $color-bg;
+
+    @media only screen and (max-width: 52.5em) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &--cta {
+    padding-bottom: calc(#{$gap-xl * 2});
+  }
+}

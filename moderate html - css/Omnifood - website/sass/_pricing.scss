@@ -1,0 +1,94 @@
+.list {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: $gap-sm;
+
+  &__item {
+    font-size: $font-md;
+
+    display: flex;
+    align-items: center;
+    gap: $gap-sm;
+
+    &__icon {
+      color: $color-prim;
+      font-size: 2.4rem;
+    }
+  }
+}
+
+.pricing-plan {
+  border: 2px solid $color-bg;
+  border-radius: $gap-xs;
+  padding: $gap-md;
+  width: 75%;
+  box-shadow: 0 20rem 20rem rgba(0, 0, 0, 0.1);
+
+  @include respond(phone-tab) {
+    width: 90%;
+  }
+
+  @include respond(phone) {
+    width: 100%;
+  }
+
+  &:first-child {
+    justify-self: end;
+  }
+
+  &--complete {
+    background-color: $color-bg;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      content: "Best value";
+      text-transform: uppercase;
+      font-size: $font-sm;
+      font-weight: $font-weight-xl;
+      padding: $gap-xs $gap-xl;
+      background-color: gold;
+      transform: rotate(45deg);
+      position: absolute;
+      top: 5%;
+      right: -15%;
+    }
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: $gap-lg;
+  }
+  &__name {
+    color: $color-prim;
+    font-weight: $font-weight-lg;
+    font-size: $font-lg;
+    text-transform: uppercase;
+    letter-spacing: 1;
+    margin-bottom: $gap-md;
+  }
+  &__price {
+    font-size: calc(#{$size-hg * 2});
+    font-weight: $font-weight-lg;
+    color: #333;
+    margin-bottom: $gap-sm;
+
+    span {
+      font-size: $size-hg;
+      font-weight: $font-weight-md;
+      margin-right: calc(#{$size-xs / 2});
+    }
+  }
+  &__text {
+    font-size: $font-df;
+    line-height: 1.6;
+    color: #6f6f6f;
+  }
+
+  &__sign-up {
+    text-align: center;
+    margin-top: $gap-lg;
+  }
+}

@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;1,300;1,500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: black;
+  font-family: "Roboto", sans-serif;
+  height: 100vh;
+  font-weight: 300;
+  font-size: 20px;
+  background-image: linear-gradient(to right, green, white, red);
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center; /* CROSS AXIS*/
+  justify-content: center; /* MAIN AXIS*/
+}
+
+.pizza {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  overflow: hidden;
+  width: 1000px;
+  box-shadow: 0 30px 80px 10px rgba(0, 0, 0, 0.2); /* X Y blur height color */
+  display: flex;
+}
+.pizza__image {
+  flex: 0 0 45%;
+}
+.pizza__img {
+  display: block;
+  width: 100%;
+}
+.pizza__content {
+  background-color: white;
+  flex: 1; /* grow , shrink (smaller) , size */
+  padding: 50px 50px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.pizza__content__title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.pizza__content__title__heading {
+  font-size: 20px;
+  margin-right: auto;
+}
+.pizz__content__title__tag {
+  font-size: 10px;
+  padding: 5px 10px;
+  margin-left: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  text-transform: uppercase;
+  color: white;
+}
+.pizz__content__title__tag--1 {
+  background-color: green;
+}
+.pizz__content__title__tag--2 {
+  background-color: red;
+}
+.pizza__content__details {
+  margin-top: auto;
+  display: flex;
+}
+.pizza__content__detail {
+  font-size: 15px;
+  text-transform: uppercase;
+  margin-right: 20px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+.emoji {
+  font-size: 20px;
+  margin-right: 5px;
+}
+.pizza__price {
+  background-image: linear-gradient(to bottom, green, white, red);
+  writing-mode: vertical-rl;
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: vertical-rl;
+  flex: 0 0 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

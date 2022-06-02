@@ -1,0 +1,66 @@
+.step {
+  &__text {
+    &__box {
+      // display: flex;
+      // flex-direction: column;
+      // justify-content: center;
+      // align-content: center;
+      align-self: center;
+      justify-self: center;
+    }
+
+    &__nr {
+      font-size: calc(#{$size-xl * 3});
+      font-weight: $font-weight-lg;
+      color: #eee;
+      margin-bottom: $gap-xs;
+    }
+
+    &__title {
+    }
+
+    &__description {
+      font-size: $font-df;
+      line-height: 1.8;
+    }
+  }
+
+  &__img {
+    &__box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // justify-self: end;
+      // align-self: center;
+
+      position: relative;
+
+      &::before,
+      &::after {
+        content: "";
+        display: block;
+        border-radius: 50%;
+
+        @include abs-center;
+      }
+
+      &::before {
+        width: 50%;
+        padding-bottom: 50%;
+        background-color: $color-bg;
+        z-index: -2;
+      }
+
+      &::after {
+        width: 40%;
+        padding-bottom: 40%;
+        background-color: #f8d8bd;
+        z-index: -1;
+      }
+    }
+
+    &__photo {
+      width: 30%;
+    }
+  }
+}

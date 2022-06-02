@@ -1,0 +1,151 @@
+.tag {
+  display: inline-block;
+  padding: calc(#{$gap-xs / 2}) calc(#{$gap-sm / 2});
+  font-size: $font-xs;
+  font-weight: $font-weight-lg;
+  text-transform: uppercase;
+  color: #333;
+  border-radius: calc(#{$gap-xs / 2});
+
+  &--vegetarian {
+    background-color: #51cf66;
+  }
+
+  &--vegan {
+    background-color: #94d82d;
+  }
+
+  &--paleo {
+    background-color: #ffe066;
+  }
+}
+
+.all-recipes {
+  text-align: center;
+  font-size: $font-md;
+}
+
+.link:link,
+.link:visited {
+  display: inline-block;
+  color: $color-prim;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  transition: all 0.2s;
+}
+
+.link:hover,
+.link:active {
+  color: $color-prim-dark;
+  border-bottom: transparent;
+}
+
+.meal {
+  box-shadow: 0 $gap-df $gap-lg rgba(0, 0, 0, 0.1);
+  border-radius: $gap-xs;
+  overflow: hidden;
+  transition: all 0.2s;
+
+  &:hover {
+    transform: translateY(-$gap-xs);
+    box-shadow: 0 $gap-df $gap-lg rgba(0, 0, 0, 0.075);
+  }
+
+  &__text {
+    &__box {
+    }
+
+    &__title {
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    // border-top-left-radius: $gap-xs;
+    // border-top-right-radius: $gap-xs;
+    //Overflow fix!
+  }
+  &__content {
+    &__box {
+      padding: $gap-lg;
+      padding-top: $gap-md;
+
+      @include respond(tab) {
+        padding: $gap-md;
+        padding-top: $gap-df;
+      }
+    }
+    &__tag {
+      margin-bottom: $gap-xs;
+
+      display: flex;
+      gap: calc(#{$gap-xs / 2});
+    }
+
+    &__title {
+      font-size: $size-xl;
+      color: #333;
+      font-weight: $font-weight-lg;
+      margin-bottom: $gap-md;
+
+      @media only screen and (max-width: 52.5em) {
+        font-size: $size-lg;
+      }
+    }
+
+    &__list {
+      list-style: none;
+
+      display: flex;
+      flex-direction: column;
+      gap: $gap-sm;
+
+      &__item {
+        font-size: $font-md;
+
+        display: flex;
+        align-items: center;
+        gap: $gap-sm;
+
+        &__icon {
+          color: $color-prim;
+          font-size: 2.4rem;
+        }
+      }
+    }
+  }
+}
+
+.diet {
+  @media only screen and (max-width: 42.5em) {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+
+  &__list {
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: $gap-sm;
+
+    @media only screen and (max-width: 52.5em) {
+      gap: $gap-xs;
+    }
+
+    &__item {
+      font-size: $font-df;
+
+      display: flex;
+      align-items: center;
+      gap: $gap-sm;
+
+      &__icon {
+        width: $size-hg;
+        height: $size-hg;
+        color: $color-prim;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.header {
+  height: 9.6rem;
+  padding: 0 $gap-lg;
+  background-color: $color-bg;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: relative;
+
+  @include respond(tab) {
+    padding: 0 $gap-md;
+  }
+
+  &__logo {
+    height: 1.8rem;
+  }
+}

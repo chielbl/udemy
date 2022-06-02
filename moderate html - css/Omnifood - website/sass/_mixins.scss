@@ -1,0 +1,65 @@
+// ******************* //
+// MEDIA QUERY MANAGER //
+@mixin respond($breakpoint) {
+  // +1600px: uUtra wide desktop
+  @if $breakpoint == ultra-wide {
+    @media only screen and (min-width: 100em) {
+      @content;
+    }
+  }
+
+  // between: Desktop (Normal styles)
+
+  // 992 - 1200px: Tablet (landscape - portrait) - Desktop
+  @if $breakpoint == tab-desktop {
+    @media only screen and (max-width: 75em) {
+      @content;
+    }
+  }
+
+  // 768px - 992px => Tablet (landscape)
+  @if $breakpoint == tab {
+    @media only screen and (max-width: 62em) {
+      @content; // It's take the content where we use the mixin
+    }
+  }
+
+  // 480px - 768px => Smartphone (landscape - portrait) - Tablet (landscape)
+  @if $breakpoint == phone-tab {
+    @media only screen and (max-width: 48em) {
+      @content; // It's take the content where we use the mixin
+    }
+  }
+
+  // 320 - 480px => Smartphone (landscape)
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 30em) {
+      @content; // It's take the content where we use the mixin
+    }
+  }
+
+  // 0 - 320px => Ultra small smartphone
+  @if $breakpoint == ultra-small {
+    @media only screen and (max-width: 20em) {
+      @content; // It's take the content where we use the mixin
+    }
+  }
+}
+// ******************* //
+
+// *************** //
+// MIXIN FUNTCIONS
+@mixin abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin pos-reset {
+  position: relative;
+  top: 0;
+  left: 0;
+  transform: translate(0, 0);
+}
+// *************** //

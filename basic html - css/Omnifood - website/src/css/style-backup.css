@@ -1,0 +1,599 @@
+/*---------------------------*/
+/*------- BASIC SETUP -------*/
+/*---------------------------*/
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Remove the blue line focus around the inputs when you hover or click on it */
+*:focus {
+  outline: none;
+}
+
+/* HTML */
+html {
+  background-color: white;
+  color: #555;
+  font-family: "Lato", "Arial", sans-serif; /* the first are not availeble then he take the next font */
+  font-weight: 300;
+  font-size: 20px;
+  text-rendering: optimizeLegibility; /* The browser emphasizes legibility over rendering speed and geometric precision. */
+  /* 
+    auto; The browser makes educated guesses (inschattingen) about when to optimize for speed, legibility, and geometric precision while drawing text.
+    optimazeSpeeld; The browser emphasizes rendering speed over legibility and geometric precision when drawing text
+    geometricPrecision; The browser emphasizes geometric precision over rendering speed and legibility. Certain aspects of fonts — such as kerning — don't scale linearly. So this value can make text using those fonts look good.
+    BUT -> if you request a font size of, say, 9 with a scale of 140%, the resulting font size of 12.6 doesn't explicitly exist in the font system, so the browser rounds the font size to 12 instead. This results in stair-step scaling of text.
+    */
+}
+/* HEADER */
+header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    /* Linear Gradients; make some colors effect you have to add at least 2 colors */
+      url("/src/css/img/hero.jpg"); /* linear-gradient() can make the image darker, is useful for background */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh; /* stead for 100% viewport it take the whole page size */
+}
+
+/* SECTIONS */
+section {
+  padding: 80px 0;
+}
+
+/* HEADINGS */
+h1,
+h2,
+h3 {
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  color: #fff;
+  font-size: 250%; /* it's take the 20px size x 250% */
+  word-spacing: 4px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 200%;
+  word-spacing: 2px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+h2:after {
+  /* creating the orange line */
+  display: block;
+  height: 2px;
+  background-color: #e67e22;
+  content: " ";
+  width: 100px;
+  margin: 30px auto;
+}
+
+h3 {
+  font-size: 125%;
+  margin-bottom: 10px;
+}
+
+/* LINKS */
+a:link,
+a:visited {
+  color: #e67e22;
+  text-decoration: none;
+  border-bottom: 1px solid #e67e22;
+  transition: border-bottom 0.2s, color 0.2s;
+  -webkit-transition: border-bottom 0.2s, color 0.2s;
+  -moz-transition: border-bottom 0.2s, color 0.2s;
+  -ms-transition: border-bottom 0.2s, color 0.2s;
+  -o-transition: border-bottom 0.2s, color 0.2s;
+}
+a:hover,
+a:active {
+  color: #555;
+  border-bottom: 1px solid transparent;
+}
+
+/* BLOCKQUOTE */
+blockquote {
+  padding: 2%;
+  font-family: "italic";
+  line-height: 150%;
+  position: relative;
+  margin-top: 50px;
+}
+blockquote::before {
+  content: "\201C";
+  font-size: 500%;
+  display: block;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+}
+
+/* CITE */
+cite {
+  font-size: 80%;
+  display: block;
+}
+cite img {
+  height: 50px;
+  width: auto;
+  border-radius: 50%;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+/* INPUT - SELECT - TEXTAREA */
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+input[type="checkbox"] {
+  margin: 10px 10px 10px 0;
+}
+
+textarea {
+  height: 100px;
+}
+
+/* FOOTER */
+footer {
+  font-size: 75%;
+  padding: 50px 0;
+  background-color: rgb(68, 68, 68);
+  color: gray;
+}
+/*---------------------------*/
+
+/*---------------------------*/
+/*--- REUSABLE COMPONENTS ---*/
+/*---------------------------*/
+.row {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.box {
+  padding-top: 1%;
+}
+
+/* This will clear the float after an ellement */
+.clearfix {
+  zoom: 1;
+}
+.clearfix:after {
+  content: ".";
+  clear: both;
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+/* BUTTONS */
+.btn:link,
+.btn:visited,
+input[type="submit"] {
+  /* visited= that the button has the same look when you go back */
+  color: white;
+  display: inline-block;
+  padding: 10px 30px;
+  font-weight: 300;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s; /* little animation by hovering it slow the color by 0,2 sec.*/
+  -webkit-transition: background-color 0.2s, color 0.2s;
+  -moz-transition: background-color 0.2s, color 0.2s;
+  -ms-transition: background-color 0.2s, color 0.2s;
+  -o-transition: background-color 0.2s, color 0.2s;
+}
+.btn-full:link,
+.btn-full:visited,
+input[type="submit"] {
+  background-color: #e67e22;
+  border: 1px solid #e67e22;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+.btn-ghost:link,
+.btn-ghost:visited {
+  border: 1px solid #e67e22;
+  color: #e67e22;
+  border-radius: 10px;
+}
+.btn:hover,
+.btn:active,
+input[type="submit"]:hover,
+input[type="submit"]:active {
+  background-color: #cf6d17;
+  color: white;
+}
+.btn-full:hover,
+.btn-full:active {
+  border: 1px solid #cf6d17;
+}
+.btn-ghost:hover,
+.btn-ghost:active {
+  color: white;
+  border: 1px solid #cf6d17;
+}
+/*---------------------------*/
+
+/*--------------------------*/
+/*----- PAGE 1 - HOME ------*/
+/*--------------------------*/
+.hero-text-box {
+  position: absolute;
+  width: 1140px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  -webkit-transform: translate(-50%, 50%);
+  -moz-transform: translate(-50%, 50%);
+  -ms-transform: translate(-50%, 50%);
+  -o-transform: translate(-50%, 50%);
+}
+
+.logo {
+  height: 100px;
+  width: auto;
+  float: left; /* The float property specifies how an element should float (zweven) */
+  margin-top: 20px;
+}
+
+.main-nav {
+  float: right;
+  list-style: none;
+  margin-top: 50px;
+}
+.main-nav li {
+  display: inline;
+  margin-left: 50px;
+}
+.main-nav li a:link, /* link = unvisited */
+  .main-nav li a:visited {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 90%;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 5px;
+  transition: border-bottom 0.2s; /* little animation by hovering */
+  -webkit-transition: border-bottom 0.2s;
+  -moz-transition: border-bottom 0.2s;
+  -ms-transition: border-bottom 0.2s;
+  -o-transition: border-bottom 0.2s;
+}
+.main-nav li a:hover,
+  .main-nav li a:active /* When you click on it and see it for a second */ {
+  border-bottom: 1px solid #e67e22;
+}
+/*--------------------------*/
+
+/*--------------------------*/
+/*--- PAGE 2 - FEATURES ----*/
+/*--------------------------*/
+.section-features {
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+.long-copy {
+  text-align: center;
+  line-height: 150%;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.box p {
+  font-size: 75%;
+  line-height: 150%;
+}
+
+.icon-big {
+  font-size: 350%;
+  display: block;
+  color: #e67e22;
+  margin-bottom: 10px;
+}
+/*--------------------------*/
+
+/*--------------------------*/
+/*----- PAGE 3 - MEALS -----*/
+/*--------------------------*/
+.section-meals {
+  padding: 0px;
+}
+
+.meals-showcase {
+  list-style: none;
+  width: 100%;
+}
+.meals-showcase li {
+  display: block;
+  float: left;
+  width: 25%;
+}
+
+.meal-photo {
+  background-color: black;
+  width: 100%;
+  margin: 0;
+  overflow: hidden; /* using for the transform scaling */
+}
+.meal-photo img {
+  opacity: 0.5; /* shadow on the image */
+  width: 100%;
+  height: auto;
+  transform: scale(1.25);
+  transition: transform 0.5s, opacity 0.5s; /* zoom animation */
+  -webkit-transition: transform 0.5s, opacity 0.5s;
+  -moz-transition: transform 0.5s, opacity 0.5s;
+  -ms-transition: transform 0.5s, opacity 0.5s;
+  -o-transition: transform 0.5s, opacity 0.5s;
+}
+.meal-photo img:hover {
+  opacity: 1;
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+}
+/*--------------------------*/
+
+/*--------------------------*/
+/*----- PAGE 4 - STEPS -----*/
+/*--------------------------*/
+.section-steps {
+  background-color: #f4f4f4;
+}
+
+.app-screen {
+  width: 50%;
+}
+
+.steps-box:first-child {
+  text-align: right;
+  padding-right: 3%;
+  margin-top: 20px;
+}
+.steps-box:last-child {
+  padding-left: 3%;
+  margin-top: 80px;
+}
+
+.works-step {
+  padding-bottom: 50px;
+}
+.works-step:last-of-type {
+  /* same as last-child */
+  margin-bottom: 100px;
+}
+.works-step div {
+  color: #e67e22;
+  border: 2px solid #e67e22;
+  display: block;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  padding: 5px;
+  float: left;
+  font-size: 150%;
+  margin-right: 20px;
+}
+
+.btn-app:link,
+.btn:visited {
+  border: 0;
+}
+.btn-app img {
+  height: 50px;
+  width: auto;
+  margin-right: 20px;
+}
+/*--------------------------*/
+
+/*--------------------------*/
+/*---- PAGE 5 - CITIES -----*/
+/*--------------------------*/
+.box img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.city-feature {
+  margin-bottom: 10px;
+}
+
+.icon-small {
+  display: inline-block;
+  width: 20px;
+  text-align: center;
+  color: #e67e22;
+  font-size: 125%;
+  margin-right: 20px;
+  /* secrets to align text and icons */
+  line-height: 120%;
+  vertical-align: middle;
+  margin-top: -5px;
+}
+/*--------------------------*/
+
+/*--------------------------*/
+/*- PAGE 6 - TESTIMONIALS --*/
+/*--------------------------*/
+.section-testimonials {
+  background-image: linear-gradient(rgb(0, 0, 0, 0.8), rgb(0, 0, 0, 0.8)),
+    url("/src/css/img/back-customers.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+}
+/*--------------------------*/
+
+/*--------------------------*/
+/*- PAGE 7 - PRICING PLANS -*/
+/*--------------------------*/
+.section-plans {
+  background-color: #f4f4f4;
+}
+
+.plan-box {
+  background-color: #fff;
+  width: 90%;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px lightgray; /* x-as y-as blur color */
+}
+.plan-box div {
+  padding: 10px;
+}
+.plan-box div:first-child {
+  background-color: #fcfcfc;
+  border-bottom: 1px solid #e8e8e8;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.plan-box div:last-child {
+  text-align: center;
+  border-top: 1px solid #e8e8e8;
+  padding: 20px 0;
+}
+.plan-box ul {
+  padding-left: 10px;
+  list-style: none;
+}
+.plan-box li {
+  padding-left: 10%;
+  list-style: none;
+  padding: 10px 0;
+}
+
+.plan-price {
+  color: #e67e22;
+  margin-bottom: 20px;
+  font-weight: 100;
+  font-size: 300%;
+}
+.plan-price span {
+  font-size: 25%;
+  font-weight: 300;
+}
+
+.plan-price-meal {
+  font-size: 75%;
+  margin-bottom: 10px;
+}
+
+.icon-small-default {
+  display: inline-block;
+  width: 20px;
+  text-align: center;
+  font-size: 120%;
+  margin-right: 20px;
+  /* secrets to align text and icons */
+  line-height: 120%;
+  vertical-align: middle;
+  margin-top: -5px;
+}
+/*--------------------------*/
+
+/*--------------------------*/
+/*--- PAGE 8 - CONTACT  ----*/
+/*--------------------------*/
+.contact-form {
+  width: 75%;
+  margin: 0 auto;
+}
+/*--------------------------*/
+
+/*--------------------------*/
+/*-------- FOOTER  ---------*/
+/*--------------------------*/
+.footer-navigation {
+  list-style: none;
+  float: left;
+}
+
+.footer-social-links {
+  list-style: none;
+  float: right;
+}
+
+.footer-navigation li,
+.footer-social-links li {
+  display: inline-block;
+  margin-right: 20px;
+}
+.footer-navigation li:last-child,
+.footer-social-links li:last-child {
+  margin: 0;
+}
+
+.footer-navigation a:link,
+.footer-navigation a:visited,
+.footer-social-links a:link,
+.footer-social-links a:visited {
+  text-decoration: none;
+  border: none;
+  color: rgb(121, 121, 121);
+  transition: color 0.2s;
+  -webkit-transition: color 0.2s;
+  -moz-transition: color 0.2s;
+  -ms-transition: color 0.2s;
+  -o-transition: color 0.2s;
+}
+
+.footer-navigation a:hover,
+.footer-navigation a:active {
+  color: #fff;
+}
+
+.footer-social-links a:link,
+.footer-social-links a:visited {
+  font-size: 150%;
+}
+
+.ion-social-facebook,
+.ion-social-twitter,
+.ion-social-googleplus,
+.ion-social-instagram {
+  color: rgb(121, 121, 121);
+  transition: color 0.2s;
+  -webkit-transition: color 0.2s;
+  -moz-transition: color 0.2s;
+  -ms-transition: color 0.2s;
+  -o-transition: color 0.2s;
+}
+.ion-social-facebook:hover,
+.ion-social-facebook:active {
+  color: #3b5998;
+}
+.ion-social-twitter:hover,
+.ion-social-twitter:active {
+  color: #00aced;
+}
+.ion-social-googleplus:hover,
+.ion-social-googleplus:active {
+  color: #dd4b39;
+}
+.ion-social-instagram:hover,
+.ion-social-instagram:active {
+  color: #517fa4;
+}
+
+.footer-copy {
+  padding-top: 25px;
+  text-align: center;
+}

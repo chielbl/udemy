@@ -1,0 +1,229 @@
+@mixin clearfix {
+  &::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}
+
+@mixin abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  @include translateXY(-50%, -50%);
+}
+
+@mixin pos-reset {
+  position: relative;
+  top: 0;
+  left: 0;
+
+  @include translateXY(0, 0);
+}
+
+// BORDER
+@mixin radius($r) {
+  border-radius: $r;
+  -webkit-border-radius: $r;
+  -moz-border-radius: $r;
+  -ms-border-radius: $r;
+  -o-border-radius: $r;
+}
+
+// TRANSITION
+// Default value:	all 0s ease 0s
+@mixin transition($property, $duration, $timingFunction, $delay) {
+  transition: $property $duration $timingFunction $delay;
+  -webkit-transition: $property $duration $timingFunction $delay;
+  -moz-transition: $property $duration $timingFunction $delay;
+  -ms-transition: $property $duration $timingFunction $delay;
+  -o-transition: $property $duration $timingFunction $delay;
+}
+
+// TRANSFORM
+// SCALE (ZOOMEN)
+@mixin scale($value) {
+  transform: scale($value);
+  -webkit-transform: scale($value);
+  -moz-transform: scale($value);
+  -ms-transform: scale($value);
+  -o-transform: scale($value);
+}
+
+// TRANSLATE
+@mixin translateXY($x, $y) {
+  transform: translate($x, $y);
+  -webkit-transform: translate($x, $y);
+  -moz-transform: translate($x, $y);
+  -ms-transform: translate($x, $y);
+  -o-transform: translate($x, $y);
+}
+
+@mixin translateX($x) {
+  transform: translateX($x);
+  -webkit-transform: translateX($x);
+  -moz-transform: translateX($x);
+  -ms-transform: translateX($x);
+  -o-transform: translateX($x);
+}
+
+@mixin translateY($y) {
+  transform: translateY($y);
+  -webkit-transform: translateY($y);
+  -moz-transform: translateY($y);
+  -ms-transform: translateY($y);
+  -o-transform: translateY($y);
+}
+
+// SKEW (SCHEEF)
+@mixin skewXY($x, $y) {
+  transform: skew($x, $y);
+  -webkit-transform: skew($x, $y);
+  -moz-transform: skew($x, $y);
+  -ms-transform: skew($x, $y);
+  -o-transform: skew($x, $y);
+}
+
+@mixin skewX($x) {
+  transform: skewX($x);
+  -webkit-transform: skewX($x);
+  -moz-transform: skewX($x);
+  -ms-transform: skewX($x);
+  -o-transform: skewX($x);
+}
+
+@mixin skewY($y) {
+  transform: skewY($y);
+  -webkit-transform: skewY($y);
+  -moz-transform: skewY($y);
+  -ms-transform: skewY($y);
+  -o-transform: skewY($y);
+}
+
+// ROTATE (DRAAIEN)
+@mixin rotate($r) {
+  transform: rotate($r);
+  -webkit-transform: rotate($r);
+  -moz-transform: rotate($r);
+  -ms-transform: rotate($r);
+  -o-transform: rotate($r);
+}
+
+@mixin rotateXY($x, $y) {
+  transform: rotate($x, $y);
+  -webkit-transform: rotate($x, $y);
+  -moz-transform: rotate($x, $y);
+  -ms-transform: rotate($x, $y);
+  -o-transform: rotate($x, $y);
+}
+
+@mixin rotateX($x) {
+  transform: rotateX($x);
+  -webkit-transform: rotateX($x);
+  -moz-transform: rotateX($x);
+  -ms-transform: rotateX($x);
+  -o-transform: rotateX($x);
+}
+
+@mixin rotateY($y) {
+  transform: rotateY($y);
+  -webkit-transform: rotateY($y);
+  -moz-transform: rotateY($y);
+  -ms-transform: rotateY($y);
+  -o-transform: rotateY($y);
+}
+
+// COMBINATIONS
+// TRANSELATE - SCALE
+@mixin translateXY-scale($x, $y, $value) {
+  transform: translate($x, $y) scale($value);
+  -webkit-transform: translate($x, $y) scale($value);
+  -moz-transform: translate($x, $y) scale($value);
+  -ms-transform: translate($x, $y) scale($value);
+  -o-transform: translate($x, $y) scale($value);
+}
+
+@mixin translateX-scale($x, $value) {
+  transform: translateX($x) scale($value);
+  -webkit-transform: translateX($x) scale($value);
+  -moz-transform: translateX($x) scale($value);
+  -ms-transform: translateX($x) scale($value);
+  -o-transform: translateX($x) scale($value);
+}
+
+@mixin translateY-scale($y, $value) {
+  transform: translateY($y) scale($value);
+  -webkit-transform: translateY($y) scale($value);
+  -moz-transform: translateY($y) scale($value);
+  -ms-transform: translateY($y) scale($value);
+  -o-transform: translateY($y) scale($value);
+}
+
+// TRANSELATE - SKEW
+@mixin translateXY-skewXY($xT, $yT, $xS, $yS) {
+  transform: translate($xT, $yT) skew($xS, $yS);
+  -webkit-transform: translate($xT, $yT) skew($xS, $yS);
+  -moz-transform: translate($xT, $yT) skew($xS, $yS);
+  -ms-transform: translate($xT, $yT) skew($xS, $yS);
+  -o-transform: translate($xT, $yT) skew($xS, $yS);
+}
+
+@mixin translateX-skewX($xT, $xS) {
+  transform: translateX($xT) skewX($xS);
+  -webkit-transform: translateX($xT) skewX($xS);
+  -moz-transform: translateX($xT) skewX($xS);
+  -ms-transform: translateX($xT) skewX($xS);
+  -o-transform: translateX($xT) skewX($xS);
+}
+
+@mixin translateY-skewY($yT, $yS) {
+  transform: translateY($yT) skewY($yS);
+  -webkit-transform: translateY($yT) skewY($yS);
+  -moz-transform: translateY($yT) skewY($yS);
+  -ms-transform: translateY($yT) skewY($yS);
+  -o-transform: translateY($yT) skewY($yS);
+}
+
+// MEDIA QUERY MANAGER
+/*
+Breakpoint argument choices
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+IMPORTANT using em in MEDIA QUERY
+1em = 16px DEFAULT
+*/
+@mixin respond($breakpoint) {
+  // +1800px: Big desktop
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 112.5em) {
+      @content;
+    }
+  }
+
+  // between: Normal styles
+
+  // 900 - 1200px: Tablet landscape
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 75em) {
+      @content;
+    }
+  }
+
+  // 600 - 900px: Tablet portrait
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 56.25em) {
+      @content;
+    }
+  }
+
+  // 0 - 600px: Phone
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5em) {
+      @content; // It's take the content where we use the mixin
+    }
+  }
+}

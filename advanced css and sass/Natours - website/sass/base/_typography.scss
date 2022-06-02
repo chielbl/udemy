@@ -1,0 +1,101 @@
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 200;
+  /* font-size: 16px; */
+  line-height: 2;
+  color: $color-grey-dark; // ! Now in abstracts/variables !
+}
+
+.heading-primary {
+  color: $color-white;
+  text-transform: uppercase;
+
+  /* It's more a fix for animation after an animation there is a little position shaking you have to added on the main block*/
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
+  &--main {
+    /* span is default a inline element so we make it a display block to create 2 lines */
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3rem;
+
+    /* Add the name of the animatin that created in @keyframes*/
+    animation-name: moveInLeft;
+    /* The time that the animation takes */
+    animation-duration: 2s;
+    animation-timing-function: ease-out; /* It's com easier out */
+    /* 
+        animation-delay: 3s; here can you give delay of the animation 
+        animation-iteration-count: 3; here can you give the count of the animation how many time that he have to do it
+        */
+
+    @include respond(phone) {
+      letter-spacing: 1rem;
+      font-size: 5rem;
+    }
+  }
+
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 1.5rem;
+    margin-bottom: 5rem;
+
+    animation-name: moveInRight; //// ! Now in bas/animations !
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+
+    @include respond(phone) {
+      letter-spacing: 0.5rem;
+    }
+  }
+}
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(
+    to right,
+    $color-primary-light,
+    $color-primary-dark
+  );
+  // We clip the background color on the text
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  will-change: opacity;
+  // Default value:	all 0s ease 0s
+  @include transition(all, 0.2s, ease, 0s);
+
+  @include respond(tab-port) {
+    font-size: 3rem;
+  }
+
+  @include respond(phone) {
+    font-size: 2.5rem;
+  }
+
+  &:hover {
+    text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.2);
+    @include skewY(2deg);
+  }
+}
+
+.heading-tertiary {
+  font-size: $default-font-size;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: $default-font-size;
+
+  &:not(:last-child) {
+    margin-bottom: 5rem;
+  }
+}

@@ -1,0 +1,48 @@
+.btn,
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: $color-white;
+  font-size: $font-lg;
+  font-weight: $font-weight-lg;
+  padding: $gap-sm $gap-md;
+  border-radius: 1.2rem;
+  transition: all 0.2s;
+}
+
+.btn--fill,
+.btn--fill:link,
+.btn--fill:visited {
+  background-color: $color-prim;
+}
+.btn--fill:hover,
+.btn--fill:active {
+  background-color: $color-prim-dark;
+}
+
+.btn--outline,
+.btn--outline:link,
+.btn--outline:visited {
+  border: 1px solid $color-prim;
+  background-color: $color-white;
+  color: $color-prim;
+}
+.btn--outline:hover,
+.btn--outline:active {
+  background-color: transparent;
+}
+
+.cta:link,
+.cta:visited {
+  display: inline-block;
+  padding: $gap-xs $gap-df;
+  border-radius: $gap-xs;
+  display: inline-block;
+  color: $color-white;
+  background-color: $color-prim;
+}
+.cta:hover,
+.cta:active {
+  background-color: $color-prim-dark;
+}

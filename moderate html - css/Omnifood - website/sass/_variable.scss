@@ -1,0 +1,97 @@
+/*
+// **** //
+// ROOT //
+// **** //
+*/
+:root {
+    /*
+      VIEW PORT
+    */
+    --vw-df: 100vw;
+    --vh-df: 100vh;
+    --width-max: 120rem;
+
+    /*
+      BOX SHADOWS
+    */
+    --shadow: box-shadow: 0 20rem 20rem rgba(0, 0, 0, 1);
+}
+// ******************** //
+
+
+/*
+// ****** //
+// COLORS //
+// ****** //
+
+  - Primary: #e67e22;
+  - Tints: #fdf2e9,#f8d8bd;
+  - Shades:
+  - Greys: #555,#333;
+*/
+$color-prim: #e67e22;
+$color-prim-dark: #cf711f;
+$color-prim-light: #e98b38;
+$color-bg: #fdf2e9;
+$color-white: #fff;
+$color-black: #000;
+$color-greys-1: #555;
+$color-greys-2: #333;
+// ******************** //
+
+
+/*
+// ********** //
+// TYPOGRAPHY //
+// ********** //
+
+  FONT SIZE SYSTEM (px)
+    10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 48 / 52 / 60 / 72 / 84
+*/
+$size-hg: 3.0rem;
+$size-xl: 2.4rem;
+$size-lg: 2.0rem;
+$size-md: 1.8rem;
+$size-df: 1.6rem;
+$size-sm: 1.4rem;
+$size-xs: 1.2rem;
+
+$font-h1: 5.2rem; // 5.2rem
+$font-h1-sm: calc(#{$size-xl * 2}); // 4.8rem
+$font-h2: 4.4rem; // 4.4rem
+$font-h2-sm: calc(#{$size-md * 2}); // 3.6rem
+$font-h3: $size-hg; // 3.0rem
+$font-h3-sm: calc(#{$size-sm * 2}); // 2.8rem
+$font-xl: $size-xl; // 2.4rem
+$font-lg: $size-lg; // 2.0rem
+$font-md: $size-md; // 1.8rem
+$font-df: $size-df; // 1.6rem
+$font-sm: $size-sm; // 1.4rem
+$font-xs: $size-xs; // 1.2rem
+
+$font-weight-xl: 700;
+$font-weight-lg: 600;
+$font-weight-md: 500;
+$font-weight-df: 400;
+
+$line-height-df: 1;
+// ******************** //
+
+
+/*
+// *************************************** //
+// GAPS / PADDING / MARGIN / BORDER-RADIUS//
+// *************************************** //
+
+  SPACING SYSTEM (px)
+    2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+// calc(#{$gap/2}) or calc(#{$gap*2})
+$gap-hg: 8.0rem;
+$gap-xl: 6.4rem;
+$gap-lg: 4.8rem;
+$gap-md: 3.2rem;
+$gap-df: 2.4rem;
+$gap-sm: 1.6rem;
+$gap-xs: 1.2rem;
+// ******************** //

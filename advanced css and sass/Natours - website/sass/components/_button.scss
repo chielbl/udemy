@@ -1,0 +1,109 @@
+.btn {
+  &,
+  &:link,
+  &:visited {
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: $default-font-size;
+    position: relative;
+
+    @include radius(5rem);
+    @include transition(all, 0.2s, ease, 0s);
+
+    //Change for the <button> element
+    cursor: pointer;
+    border: none;
+  }
+
+  &:hover {
+    box-shadow: 0 10px 20px rgba($color-black, 0.2);
+
+    /*By hovering we bring the button a little up by using the Y as(Y as is going up to down)*/
+    @include translateY(-0.3rem);
+
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      -webkit-transform: scaleX(1.4) scaleY(1.6);
+      -moz-transform: scaleX(1.4) scaleY(1.6);
+      -ms-transform: scaleX(1.4) scaleY(1.6);
+      -o-transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+
+    /*By clicking we bring the button a little lower byusing the Y as(Y as is going up to down)*/
+    @include translateY(-0.1rem);
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    @include radius(5rem);
+    @include transition(all, 0.4s, ease, 0s);
+  }
+
+  &--white {
+    background-color: $color-white;
+    padding: 1rem 3rem;
+    color: $color-grey-dark;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  &--green {
+    background-color: $color-primary;
+    padding: 1rem 3rem;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-primary;
+    }
+  }
+
+  &--animated {
+    animation: moveInBottom 0.5s ease-out 1s backwards;
+    -webkit-animation: moveInBottom 0.5s ease-out 1s backwards;
+  }
+}
+
+.btn-text {
+  &:link,
+  &:visited {
+    font-size: $default-font-size;
+    color: $color-primary;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid $color-primary;
+
+    @include transition(all, 0.2s, ease, 0s);
+  }
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+    box-shadow: 0 1rem 2rem rgba ($color-black, 0.15);
+
+    @include translateY(-2px);
+  }
+
+  &:active {
+    box-shadow: 0 0.5rem 1rem rgba ($color-black, 0.15);
+
+    @include translateY(0);
+  }
+}

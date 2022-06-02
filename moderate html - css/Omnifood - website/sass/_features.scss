@@ -1,0 +1,21 @@
+.feature {
+  &__icon {
+    color: $color-prim-dark;
+    height: $size-hg;
+    width: $size-hg;
+    margin-bottom: $gap-md;
+    background-color: $color-bg;
+    padding: $gap-sm;
+    border-radius: 50%;
+  }
+  &__title {
+    font-size: $size-xl;
+    color: #333;
+    font-weight: $font-weight-xl;
+    margin-bottom: $gap-df;
+  }
+  &__text {
+    font-size: $size-md;
+    line-height: 1.8;
+  }
+}

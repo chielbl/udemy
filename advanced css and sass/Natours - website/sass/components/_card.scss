@@ -1,0 +1,233 @@
+.card {
+  //Is needed to get the perfect flip other wise they to a nig scale by flip
+  //TIP play with the value to a smal value you will see what's happen
+  perspective: 200rem;
+  -moz-perspective: 200rem;
+  position: relative;
+  //FIX gave the parent the same height ass the childs
+  height: 55rem;
+
+  //FRONT
+  &__side {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 55rem;
+    backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+    //image get over the card so we use the fix overflow hidden to see there border radius
+    overflow: hidden;
+
+    @include radius(4px);
+    @include transition(all, 1s, ease, 0s);
+
+    &--front {
+      background-color: $color-white;
+    }
+
+    &--back {
+      @include rotateY(180deg);
+
+      &--1 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        );
+      }
+
+      &--2 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-primary-light,
+          $color-primary-dark
+        );
+      }
+
+      &--3 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        );
+      }
+    }
+  }
+
+  &:hover &__side--front {
+    @include rotateY(-180deg);
+  }
+
+  &:hover &__side--back {
+    @include rotateY(0);
+  }
+
+  &__picture {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: screen;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    @include radius(4px);
+
+    &--1 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        ),
+        url("/img/nat-5.jpg");
+    }
+
+    &--2 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-primary-light,
+          $color-primary-dark
+        ),
+        url("/img/nat-6.jpg");
+    }
+
+    &--3 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        ),
+        url("/img/nat-7.jpg");
+    }
+  }
+
+  &__heading {
+    width: 70%;
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: right;
+    color: white;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    line-height: 5rem;
+  }
+
+  &__heading-span {
+    padding: 1rem 1.5rem;
+    //Split the text when the box break
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+
+    &--1 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-secondary-light, 0.8),
+        rgba($color-secondary-dark, 0.8)
+      );
+    }
+
+    &--2 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8)
+      );
+    }
+
+    &--3 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-tertiary-light, 0.8),
+        rgba($color-tertiary-dark, 0.8)
+      );
+    }
+  }
+
+  &__details {
+    padding: 3rem;
+
+    ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto;
+
+      li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid $color-grey-light-2;
+        }
+      }
+    }
+  }
+
+  //BACK
+  &__cta {
+    width: 90%;
+    text-align: center;
+
+    @include abs-center;
+  }
+
+  &__price-box {
+    color: $color-white;
+  }
+
+  &__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+
+  &__price-value {
+    font-size: 6rem;
+    font-weight: 100;
+  }
+
+  //By creating a new cart is better to copy all the suff and rewrite it
+  //@include respond(tab-port) {
+  //when there is no mouse! -> (hover: none)
+  @media only screen and (max-width: 56.25em), only screen and (hover: none) {
+    height: auto;
+    background-color: $color-white;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+
+    @include radius(4px);
+
+    //FRONT
+    &__side {
+      position: relative;
+      height: auto;
+      box-shadow: none;
+
+      &--back {
+        clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+
+        @include rotateY(0);
+      }
+    }
+
+    &:hover &__side--front {
+      @include rotateY(0);
+    }
+
+    &__details {
+      padding: 1rem;
+    }
+
+    //BACK
+    &__cta {
+      width: 100%;
+      text-align: center;
+      padding: 6rem 4rem 4rem 4rem;
+
+      @include pos-reset;
+    }
+
+    &__price-value {
+      font-size: 4rem;
+    }
+  }
+}

@@ -1,0 +1,84 @@
+.hero {
+  max-width: 130rem;
+  margin: 0 auto;
+  padding: 0 $gap-md;
+
+  align-items: center;
+
+  @include respond(tab-desktop) {
+    align-items: start;
+  }
+
+  @include respond(tab) {
+    padding: 0 $gap-hg;
+    grid-template-columns: 1fr;
+  }
+
+  &__text {
+    &__box {
+      @include respond(tab) {
+        text-align: center;
+      }
+    }
+
+    &__title {
+    }
+
+    &__description {
+      font-size: $font-lg;
+      line-height: 1.6;
+      margin-bottom: $gap-lg;
+    }
+  }
+
+  &__img {
+    width: 100%;
+
+    @include respond(tab) {
+      width: 60%;
+    }
+
+    &__box {
+      @include respond(tab) {
+        text-align: center;
+      }
+    }
+  }
+
+  &__delivered {
+    &__meals {
+      display: flex;
+      align-items: center;
+      gap: $gap-sm;
+
+      @include respond(tab) {
+        justify-content: center;
+      }
+    }
+
+    &__images {
+      display: flex;
+    }
+
+    &__img {
+      height: 4.8rem;
+      width: 4.8rem;
+      border-radius: 50%;
+      border: 2px solid $color-bg;
+
+      &:not(:last-child) {
+        margin-right: -$gap-sm;
+      }
+    }
+
+    &__text {
+      font-size: $font-md;
+      font-weight: $font-weight-md;
+    }
+
+    &__text span {
+      color: $color-prim-dark;
+      font-weight: $font-weight-xl;
+    }
+  }
+}

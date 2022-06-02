@@ -1,0 +1,60 @@
+.header {
+  height: 95vh;
+  /* 0.8 is the oppacity of the image (bepalen hoe transparant) */
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url("../img/hero-small.jpg");
+  background-size: cover;
+  background-position: top;
+  /* polygon = veelhoek (x y, x y, x y, x y) left top -> right top -> right bottom -> left bottom */
+  clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+  /* position: relative is for the parent to position the childs in absolute */
+  position: relative;
+
+  @include respond(phone) {
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  }
+
+  // Defaul resolution for retina screen 192dpi or DPR:2.0
+  @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+    only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+    only screen and (min-width: 125em) {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8)
+      ),
+      url("../img/hero.jpg");
+  }
+
+  /* NESTING &= .header */
+  &__logo-box {
+    /* position: relative is for the parent to position the childs in absolute */
+    position: absolute;
+    top: 4rem; /* 4 * 10px of the root size (font size)*/
+    left: 4rem; /* 40px */
+  }
+
+  &__logo {
+    height: 3.5rem;
+  }
+
+  /* .logo-logo:hover {
+      animation: moveInRight 1s ease-out;
+      -webkit-animation: moveInRight 1s ease-out;
+    } */
+
+  &__text-box {
+    text-align: center;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    /* standard he position the box 50% on left by using the edge of left side of the element and the same for the top */
+    /* But we want that he calculate the 50% on the center of the element instead of the edges */
+    /* So, using transform and translate the X and Y as of the element to -50% */
+    @include translateX(-50%);
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "forkify",
+  "version": "1.0.0",
+  "description": "Recipes application - js final project",
+  "default": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "Chiel",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.2.1",
+    "node-sass": "^7.0.1",
+    "parcel": "^2.2.1"
+  },
+  "dependencies": {
+    "core-js": "^3.20.3",
+    "fracty": "^1.0.9",
+    "regenerator-runtime": "^0.13.9"
+  }
+}

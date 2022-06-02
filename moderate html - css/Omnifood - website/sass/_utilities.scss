@@ -1,0 +1,243 @@
+/*
+// ****** //
+// MARGIN //
+// ****** //
+
+  TOP
+*/
+.u-mg-top-hg {
+  margin-top: $gap-hg !important;
+}
+.u-mg-top-xl {
+  margin-top: $gap-xl !important;
+}
+.u-mg-top-lg {
+  margin-top: $gap-lg !important;
+}
+.u-mg-top-df {
+  margin-top: $gap-df !important;
+}
+.u-mg-top-md {
+  margin-top: $gap-md !important;
+}
+.u-mg-top-sm {
+  margin-top: $gap-sm !important;
+}
+.u-mg-top-xs {
+  margin-top: $gap-xs !important;
+}
+
+/*
+  RIGHT
+*/
+.u-mg-right-hg {
+  margin-right: $gap-hg !important;
+}
+.u-mg-right-xl {
+  margin-right: $gap-xl !important;
+}
+.u-mg-right-lg {
+  margin-right: $gap-lg !important;
+}
+.u-mg-right-df {
+  margin-right: $gap-df !important;
+}
+.u-mg-right-md {
+  margin-right: $gap-md !important;
+}
+.u-mg-right-sm {
+  margin-right: $gap-sm !important;
+}
+.u-mg-right-xs {
+  margin-right: $gap-xs !important;
+}
+
+/*
+  BOTTOM
+*/
+.u-mg-bottom-hg {
+  margin-bottom: $gap-hg !important;
+}
+.u-mg-bottom-xl {
+  margin-bottom: $gap-xl !important;
+}
+.u-mg-bottom-lg {
+  margin-bottom: $gap-lg !important;
+}
+.u-mg-bottom-df {
+  margin-bottom: $gap-df !important;
+}
+.u-mg-bottom-md {
+  margin-bottom: $gap-md !important;
+}
+.u-mg-bottom-sm {
+  margin-bottom: $gap-sm !important;
+}
+.u-mg-bottom-xs {
+  margin-bottom: $gap-xs !important;
+}
+
+/*
+  LEFT
+*/
+.u-mg-left-hg {
+  margin-left: $gap-hg !important;
+}
+.u-mg-left-xl {
+  margin-left: $gap-xl !important;
+}
+.u-mg-left-lg {
+  margin-left: $gap-lg !important;
+}
+.u-mg-left-df {
+  margin-left: $gap-df !important;
+}
+.u-mg-left-md {
+  margin-left: $gap-md !important;
+}
+.u-mg-left-sm {
+  margin-left: $gap-sm !important;
+}
+.u-mg-left-xs {
+  margin-left: $gap-xs !important;
+}
+// ******************** //
+
+/*
+// ******* //
+// PADDING //
+// ******* //
+
+  TOP
+*/
+.u-pd-top-hg {
+  padding-top: $gap-hg !important;
+}
+.u-pd-top-xl {
+  padding-top: $gap-xl !important;
+}
+.u-pd-top-lg {
+  padding-top: $gap-lg !important;
+}
+.u-pd-top-df {
+  padding-top: $gap-df !important;
+}
+.u-pd-top-md {
+  padding-top: $gap-md !important;
+}
+.u-pd-top-sm {
+  padding-top: $gap-sm !important;
+}
+.u-pd-top-xs {
+  padding-top: $gap-xs !important;
+}
+
+/*
+  RIGHT
+*/
+.u-pd-right-hg {
+  padding-right: $gap-hg !important;
+}
+.u-pd-right-xl {
+  padding-right: $gap-xl !important;
+}
+.u-pd-right-lg {
+  padding-right: $gap-lg !important;
+}
+.u-pd-right-df {
+  padding-right: $gap-df !important;
+}
+.u-pd-right-md {
+  padding-right: $gap-md !important;
+}
+.u-pd-right-sm {
+  padding-right: $gap-sm !important;
+}
+.u-pd-right-xs {
+  padding-right: $gap-xs !important;
+}
+
+/*
+  BOTTOM
+*/
+.u-pd-bottom-hg {
+  padding-bottom: $gap-hg !important;
+}
+.u-pd-bottom-xl {
+  padding-bottom: $gap-xl !important;
+}
+.u-pd-bottom-lg {
+  padding-bottom: $gap-lg !important;
+}
+.u-pd-bottom-df {
+  padding-bottom: $gap-df !important;
+}
+.u-pd-bottom-md {
+  padding-bottom: $gap-md !important;
+}
+.u-pd-bottom-sm {
+  padding-bottom: $gap-sm !important;
+}
+.u-pd-bottom-xs {
+  padding-bottom: $gap-xs !important;
+}
+
+/*
+  LEFT
+*/
+.u-pd-left-hg {
+  padding-left: $gap-hg !important;
+}
+.u-pd-left-xl {
+  padding-left: $gap-xl !important;
+}
+.u-pd-left-lg {
+  padding-left: $gap-lg !important;
+}
+.u-pd-left-df {
+  padding-left: $gap-df !important;
+}
+.u-pd-left-md {
+  padding-left: $gap-md !important;
+}
+.u-pd-left-sm {
+  padding-left: $gap-sm !important;
+}
+.u-pd-left-xs {
+  padding-left: $gap-xs !important;
+}
+// ******************** //
+
+/*
+  GAP FIX WHEN THE BROWSER NOT SUPPORT IT!
+*/
+// ******************** //
+.no-flexbox-gap .nav__list li:not(:last-child) {
+  margin-right: 4.8rem;
+}
+
+.no-flexbox-gap .nav__list__item:not(:last-child) {
+  margin-bottom: 1.6rem;
+}
+
+.no-flexbox-gap .nav__list__item__icon:not(:last-child) {
+  margin-right: 1.6rem;
+}
+
+.no-flexbox-gap .footer__nav-col li:not(:last-child) {
+  margin-bottom: 2.4rem;
+}
+
+@media (max-width: 75em) {
+  .no-flexbox-gap .nav__list li:not(:last-child) {
+    margin-right: 3.2rem;
+  }
+}
+
+@media (max-width: 59em) {
+  .no-flexbox-gap .nav__list li:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 4.8rem;
+  }
+}
+// ******************** //

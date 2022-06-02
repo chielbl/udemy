@@ -1,0 +1,70 @@
+.testimonial {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $gap-lg;
+
+  @media only screen and (max-width: 52.5em) {
+    gap: $gap-hg;
+  }
+
+  &--container {
+    padding: $gap-hg;
+    padding-right: 0;
+
+    @include respond(tab) {
+      padding: $gap-md;
+    }
+  }
+
+  &__box {
+    &__photo {
+      width: 6.4rem;
+      border-radius: 50%;
+      margin-bottom: $gap-xs;
+    }
+    &__text {
+      font-size: $font-md;
+      line-height: 1.8;
+      margin-bottom: $gap-df;
+
+      @include respond(tab-desktop) {
+        font-size: $font-df;
+      }
+    }
+    &__name {
+      font-size: $font-df;
+      color: #6f6f6f;
+
+      @include respond(tab-desktop) {
+        font-size: $font-sm;
+      }
+    }
+  }
+}
+
+.gallery {
+  padding: $gap-sm;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $gap-sm;
+  align-content: center;
+
+  @media only screen and (max-width: 52.5em) {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  &__image {
+    overflow: hidden;
+    &__photo {
+      display: block; // remove space between the images
+      width: 100%;
+
+      transition: all 0.4s;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+}
